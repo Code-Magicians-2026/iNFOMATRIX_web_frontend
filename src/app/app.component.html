@@ -1,0 +1,127 @@
+<!-- NAVBAR -->
+<header class="navbar">
+  <span class="navbar__logo">Appo4ka</span>
+  <button class="navbar__lang" (click)="toggleLang()">
+    <svg class="lang-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="10" cy="10" r="8.5" stroke="#1a1a1a" stroke-width="1.5"/>
+      <path d="M10 1.5C10 1.5 7 5 7 10C7 15 10 18.5 10 18.5" stroke="#1a1a1a" stroke-width="1.5"/>
+      <path d="M10 1.5C10 1.5 13 5 13 10C13 15 10 18.5 10 18.5" stroke="#1a1a1a" stroke-width="1.5"/>
+      <path d="M1.5 10H18.5" stroke="#1a1a1a" stroke-width="1.5"/>
+      <path d="M2.5 6.5H17.5" stroke="#1a1a1a" stroke-width="1.5"/>
+      <path d="M2.5 13.5H17.5" stroke="#1a1a1a" stroke-width="1.5"/>
+    </svg>
+    {{ t['langBtn'] }}
+  </button>
+</header>
+
+<main class="page">
+
+  <!-- SECTION 1: HERO -->
+  <section class="section section--hero">
+    <div class="hero__text">
+      <div class="hero__header">
+        <h1 class="heading-1 hero__title">
+          {{ t['heroTitle'] }}<span class="hero__badge">
+    <span class="hero__badge-text">{{ t['heroLabel'] }}</span>
+  </span>
+        </h1>
+
+      </div>
+
+      <p class="body-text hero__desc">{{ t['heroDesc'] }}</p>
+      <button href="" class="btn btn--primary" (click)="goToApp()">{{ t['heroBtn'] }}</button>
+    </div>
+
+    <div class="card card--pink">
+
+        <img src="assets/img1.png" alt="heroes" class="card__img" />
+    </div>
+  </section>
+
+  <!-- SECTION 2: AI QUESTS -->
+  <section class="section section--ai">
+    <div class="card card--orange">
+      <img src="assets/img2.png" alt="heroes" class="card__img" />
+
+    </div>
+
+    <div class="ai__text">
+      <h2 class="heading-2">{{ t['section2Title'] }}</h2>
+      <p class="body-text">{{ t['section2Desc'] }}</p>
+    </div>
+  </section>
+
+  <!-- SECTION 3: BADGES -->
+  <section class="section section--badges">
+    <div class="badges__text">
+      <h2 class="heading-2">{{ t['section3Title'] }}</h2>
+      <p class="body-text">{{ t['section3Desc'] }}</p>
+    </div>
+
+    <div class="card card--coral">
+      <img src="assets/img3.png" alt="heroes" class="card__img" />
+
+    </div>
+  </section>
+
+  <!-- SECTION 4: AI QUESTS -->
+  <section class="section section--ai">
+    <div class="card card--orange">
+      <img src="assets/ref567.png" alt="heroes" class="card__img" />
+
+    </div>
+
+    <div class="ai__text">
+      <h2 class="heading-2">{{ t['section4Title'] }}</h2>
+      <p class="body-text">{{ t['section4Desc'] }}</p>
+    </div>
+  </section>
+
+
+</main>
+
+<footer class="footer">
+  <div class="footer__qr-section">
+
+    <img src="assets/ref5.png" alt="Happy elephant sitting on the floor" class="footer__cat" />
+
+    <div class="footer__qr-wrapper">
+      <div class="footer__qr-box">
+        <img src="assets/qr-code.png" alt="QR code for Appo4ka app download" class="footer__qr-img" />
+      </div>
+      <p class="footer__scan-text">{{ t['qrscan'] }}</p>
+      <p class="footer__download-text">{{ t['dotor'] }} <a href="https://drive.google.com/drive/folders/1UqLcpEVXZDLE4ZWryGDuTg282GG9HEUb" class="footer__link">{{ t['download'] }}</a> {{ t['anapp'] }}</p>
+    </div>
+
+    <img src="assets/qrcat.png" alt="Happy black cat with medals holding a phone" class="footer__cat" />
+  </div>
+
+  <div class="footer__footer">
+    <div class="footer__contacts">
+      <p class="footer__contacts-title">{{ t['anyquestions'] }}<br>{{ t['contactus'] }}</p>
+      <div class="footer__buttons">
+        <a href="tel:+380123456789" class="footer__btn">
+          <svg width="20" height="20" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15.4467 25.1767C18.8067 31.78 24.22 37.17 30.8233 40.5533L35.9567 35.42C36.5867 34.79 37.52 34.58 38.3367 34.86C40.95 35.7233 43.7733 36.19 46.6667 36.19C47.95 36.19 49 37.24 49 38.5233V46.6667C49 47.95 47.95 49 46.6667 49C24.7567 49 7 31.2433 7 9.33333C7 8.05 8.05 7 9.33333 7H17.5C18.7833 7 19.8333 8.05 19.8333 9.33333C19.8333 12.25 20.3 15.05 21.1633 17.6633C21.42 18.48 21.2333 19.39 20.58 20.0433L15.4467 25.1767Z" fill="black"/>
+          </svg>
+          +380 123 456 6789
+        </a>
+        <a href="mailto:appo4ka@gmail.com" class="footer__btn">
+          <svg width="20" height="20" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9.33073 46.6654C8.0474 46.6654 6.94917 46.2088 6.03606 45.2957C5.12295 44.3826 4.66562 43.2836 4.66406 41.9987V13.9987C4.66406 12.7154 5.1214 11.6171 6.03606 10.704C6.95073 9.79092 8.04895 9.33359 9.33073 9.33203H46.6641C47.9474 9.33203 49.0464 9.78936 49.9611 10.704C50.8757 11.6187 51.3323 12.7169 51.3307 13.9987V41.9987C51.3307 43.282 50.8742 44.381 49.9611 45.2957C49.048 46.2104 47.9489 46.6669 46.6641 46.6654H9.33073ZM27.9974 30.332L9.33073 18.6654V41.9987H46.6641V18.6654L27.9974 30.332ZM27.9974 25.6654L46.6641 13.9987H9.33073L27.9974 25.6654ZM9.33073 18.6654V13.9987V41.9987V18.6654Z" fill="black"/>
+          </svg>
+          <span class="footer__btn-text">appo4ka&#64;gmail.com</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer__brand">Appo4ka</div>
+
+    <div class="footer__bottom">
+      <span>Terms & Conditions</span>
+      <span>All Rights Reserved</span>
+      <span>©Appo4ka 2026</span>
+    </div>
+  </div>
+</footer>
+
