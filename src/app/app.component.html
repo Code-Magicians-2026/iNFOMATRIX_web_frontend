@@ -80,6 +80,88 @@
 
 </main>
 
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="pricing">
+  <div class="pricing__inner">
+
+    <!-- ── Hero ── -->
+    <div class="section section--hero pricing__hero">
+      <div class="hero__text">
+        <div class="subplus">
+          {{ t['pricingTitle'] }}
+        </div>
+        <p class="hero-text">{{ t['pricingSubtitle'] }}</p>
+        <button class="btn btn--free" (click)="goToApp()">{{ t['pricingHeroBtn'] }}</button>
+      </div>
+
+      <img src="assets/kulakfox.png" alt="heroes" class="card__img" />
+    </div>
+
+    <!-- ── Plans ── -->
+    <div class="pricing__plans">
+      <h2 class="heading-2" style="text-align:center">{{ t['pricingPlansTitle'] }}</h2>
+
+      <div class="pricing__grid">
+        <div
+          *ngFor="let plan of plans"
+          class="pricing__card"
+          [class.pricing__card--highlighted]="plan.highlighted"
+        >
+          <!-- Header -->
+          <div class="pricing__card-header">
+            <span class="pricing__card-name">{{ plan.name }}</span>
+            <div class="pricing__card-price">
+              <span class="pricing__price-symbol">$</span>
+              <span class="pricing__price-amount">{{ plan.price }}</span>
+              <span class="pricing__price-currency">{{ plan.currency }}</span>
+            </div>
+          </div>
+
+          <!-- Features — push { label: t['...'] } to plan.features to extend -->
+          <ul class="pricing__features">
+            <li *ngFor="let f of plan.features" class="pricing__feature">
+              <span class="pricing__feature-dot" aria-hidden="true"></span>
+              {{ f.label }}
+            </li>
+          </ul>
+
+          <!-- CTA -->
+          <div class="pricing__card-footer">
+            <button
+              class="btn"
+              (click)="goToApp()"
+            >
+              {{ plan.ctaLabel }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
 <footer class="footer">
   <div class="footer__qr-section">
 

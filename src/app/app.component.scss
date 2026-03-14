@@ -15,6 +15,7 @@ $desktop: 1024px;
 
 $fh: 'Urbanist', sans-serif;    // headings
 $fb: 'Space Grotesk', sans-serif; // body
+$ub: 'Unbounded', sans-serif; //donate
 
 // =====================
 // NAVBAR
@@ -82,7 +83,7 @@ $fb: 'Space Grotesk', sans-serif; // body
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  gap: 48px;
+  gap: 78px;
   margin-bottom: 10px;
 }
 
@@ -180,19 +181,28 @@ $fb: 'Space Grotesk', sans-serif; // body
   &--primary {
     background: $btn-pink;
     color: #fff;
+  }
 
+  &--free {
+    background-color: #CEE977;
+    color: #000;
+  }
     &:hover {
       background: $btn-hover;
       transform: translate(-2px, -2px);
       box-shadow: 7px 7px 0 $text;
     }
-
+  &--free:hover {
+    background: $bg;
+    transform: translate(-2px, -2px);
+    box-shadow: 7px 7px 0 $text;
+  }
     &:active {
       transform: translate(2px, 2px);
       box-shadow: 2px 2px 0 $text;
     }
   }
-}
+
 
 // =====================
 // CARDS
@@ -321,7 +331,7 @@ $fb: 'Space Grotesk', sans-serif; // body
 .footer {
   background: linear-gradient(
       180deg,
-      #CEE977 0%,
+      #e87ec4 0%,
       #A48AED 25%,
       #A48AED 70%,
       #CEE977 96%
@@ -553,4 +563,253 @@ $fb: 'Space Grotesk', sans-serif; // body
     font-size: 13px;
     padding: 16px 0;
   }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ── Pricing section wrapper ─────────────────────────────────────────────────
+.pricing {
+  background: linear-gradient(
+      180deg,
+      #CEE977 0%,
+      #e87ec4 10%,
+      #e87ec4 100%,
+
+  );
+}
+
+.pricing__inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 64px 24px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
+}
+
+// ── Hero block ──────────────────────────────────────────────────────────────
+.pricing__hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 48px;
+
+  // Reuse .card sizing from global styles — just constrain aspect-ratio
+  .card {
+    aspect-ratio: 4 / 3.5;
+  }
+
+  @media (max-width: 700px) {
+    grid-template-columns: 1fr;
+
+    .hero__text { order: 1; }
+    .card        { order: 2; max-width: 480px; margin: 0 auto; width: 100%; }
+  }
+}
+
+// ── Plans title ─────────────────────────────────────────────────────────────
+.pricing__plans {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+// ── Plans grid ──────────────────────────────────────────────────────────────
+.pricing__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  align-items: start;
+
+  @media (max-width: 700px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: $mobile) {   // 480px from your tokens
+    grid-template-columns: 1fr;
+  }
+}
+
+// ── Plan card ───────────────────────────────────────────────────────────────
+.pricing__card {
+  background: #fff;
+  border: $border;             // 2.5px solid #1a1a1a
+  border-radius: $radius;      // 20px
+  box-shadow: $shadow;         // 5px 5px 0px #1a1a1a
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+
+  &:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 8px 8px 0 #1a1a1a;
+  }
+
+  // Highlighted card gets a green accent bar on top
+  &--highlighted {
+    &::before {
+      content: '⭐ Most popular';
+      display: block;
+      background: $bg;              // #CEE977
+      color: $text;
+      font-family: $fh;
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-align: center;
+      padding: 6px 12px;
+      border-bottom: 2.5px solid #1a1a1a;
+      letter-spacing: 0.5px;
+    }
+  }
+
+  // ── Header ──
+  &-header {
+    padding: 20px 20px 0;
+  }
+
+  &-name {
+    font-family: $fh;
+    font-weight: 800;
+    font-size: 1.4rem;
+    color: $text;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  &-price {
+    display: flex;
+    align-items: baseline;
+    gap: 2px;
+    margin-bottom: 4px;
+  }
+
+  &-footer {
+    padding: 16px 20px 20px;
+
+    .btn {
+      width: 100%;
+    }
+  }
+}
+
+// ── Price typography ────────────────────────────────────────────────────────
+.pricing__price-symbol {
+  font-size: 1rem;
+  font-weight: 700;
+  color: $text;
+  line-height: 1;
+}
+
+.pricing__price-amount {
+  font-family: $fh;
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: $text;
+  line-height: 1;
+}
+
+.pricing__price-currency {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: rgba(26, 26, 26, 0.5);
+  text-transform: uppercase;
+  margin-left: 3px;
+}
+
+// ── Feature list ────────────────────────────────────────────────────────────
+.pricing__features {
+  flex: 1;   // push footer button to bottom
+  list-style: none;
+  padding: 16px 20px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pricing__feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-family: $fb;
+  font-size: 0.95rem;
+  color: $text;
+  line-height: 1.45;
+}
+
+.pricing__feature-dot {
+  flex-shrink: 0;
+  margin-top: 6px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: $text;
+}
+
+// ── Ghost button variant (non-highlighted cards) ────────────────────────────
+.btn--ghost {
+  font-family: $fh;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 14px 30px;
+  border: $border;
+  border-radius: 16px;
+  cursor: pointer;
+  box-shadow: $shadow;
+  background: transparent;
+  color: $text;
+  transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.05);
+    transform: translate(-2px, -2px);
+    box-shadow: 7px 7px 0 $text;
+  }
+
+  &:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 $text;
+  }
+}
+
+// ── Mobile tweaks ───────────────────────────────────────────────────────────
+@media (max-width: $mobile) {
+  .pricing__inner {
+    padding: 44px 16px 60px;
+    gap: 52px;
+  }
+
+  // On mobile show highlighted card first
+  .pricing__card--highlighted {
+    order: -1;
+  }
+}
+
+
+
+
+.subplus{
+  font-family: $ub;
+  font-weight: 700;
+  font-size: 36px;
+  letter-spacing: -0.15px;
 }
