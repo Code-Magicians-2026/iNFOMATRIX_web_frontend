@@ -13,13 +13,11 @@ $mobile:  480px;
 $tablet:  768px;
 $desktop: 1024px;
 
-$fh: 'Urbanist', sans-serif;    // headings
-$fb: 'Space Grotesk', sans-serif; // body
-$ub: 'Unbounded', sans-serif; //donate
+$fh: 'Urbanist', sans-serif;   
+$fb: 'Space Grotesk', sans-serif;
+$ub: 'Unbounded', sans-serif;
 
-// =====================
-// NAVBAR
-// =====================
+
 .navbar {
   display: flex;
   align-items: center;
@@ -64,9 +62,7 @@ $ub: 'Unbounded', sans-serif; //donate
   }
 }
 
-// =====================
-// PAGE
-// =====================
+
 .page {
   max-width: 920px;
   margin: 0 auto;
@@ -76,9 +72,7 @@ $ub: 'Unbounded', sans-serif; //donate
   gap: 88px;
 }
 
-// =====================
-// SECTIONS
-// =====================
+
 .section {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -87,9 +81,6 @@ $ub: 'Unbounded', sans-serif; //donate
   margin-bottom: 10px;
 }
 
-// =====================
-// TYPOGRAPHY
-// =====================
 .heading-2 {
   font-family: $fh;
   font-weight: 800;
@@ -107,9 +98,7 @@ $ub: 'Unbounded', sans-serif; //donate
   color: $text;
 }
 
-// =====================
-// HERO TEXT
-// =====================
+
 .hero__title {
   font-family: $fh;
   font-weight: 900;
@@ -164,9 +153,7 @@ $ub: 'Unbounded', sans-serif; //donate
   max-width: 340px;
 }
 
-// =====================
-// BUTTON
-// =====================
+
 .btn {
   font-family: $fh;
   font-weight: 700;
@@ -204,10 +191,6 @@ $ub: 'Unbounded', sans-serif; //donate
     }
   }
 
-
-// =====================
-// CARDS
-// =====================
 .card {
   border-radius: $radius;
   border: $border;
@@ -220,16 +203,10 @@ $ub: 'Unbounded', sans-serif; //donate
   position: relative;
   transition: transform 0.2s, box-shadow 0.2s;
 
-  //&:hover {
-  //  transform: translate(-3px, -3px);
-  //  box-shadow: 8px 8px 0 $text;
-  //}
-
   &--pink   { background: $pink-card; }
   &--orange { background: $orange-card; }
   &--coral  { background: $coral-card; }
 
-  // When you add a real image:
   &__img {
     width: 100%;
     height: 100%;
@@ -237,7 +214,7 @@ $ub: 'Unbounded', sans-serif; //donate
     padding: 16px;
   }
 
-  // Placeholder (remove once you add images)
+ 
   &__placeholder {
     display: flex;
     flex-direction: column;
@@ -262,18 +239,13 @@ $ub: 'Unbounded', sans-serif; //donate
   }
 }
 
-// =====================
-// AI & BADGES TEXT COLS
-// =====================
 .ai__text,
 .badges__text {
   display: flex;
   flex-direction: column;
 }
 
-// =====================
-// RESPONSIVE — TABLET
-// =====================
+
 @media (max-width: 700px) {
   .navbar {
     padding: 14px 20px;
@@ -315,9 +287,7 @@ $ub: 'Unbounded', sans-serif; //donate
   }
 }
 
-// =====================
-// RESPONSIVE — MOBILE
-// =====================
+
 @media (max-width: 420px) {
   .hero__badge-text {
     font-size: 14px;
@@ -343,9 +313,6 @@ $ub: 'Unbounded', sans-serif; //donate
   font-family: $fb;
 }
 
-// ──────────────────────────────────────────────
-// QR SECTION ─ now flex row + responsive stack
-// ──────────────────────────────────────────────
 .footer__qr-section {
   display: flex;
   flex-direction: row;
@@ -450,9 +417,7 @@ $ub: 'Unbounded', sans-serif; //donate
   }
 }
 
-// ──────────────────────────────────────────────
-// Contacts
-// ──────────────────────────────────────────────
+
 .footer__contacts {
   padding: 0 8px;
   margin-bottom: 40px;
@@ -519,13 +484,10 @@ $ub: 'Unbounded', sans-serif; //donate
 }
 
 .footer__btn-text {
-  // helps with email wrapping on small screens
   word-break: break-all;
 }
 
-// ──────────────────────────────────────────────
-// Brand + bottom
-// ──────────────────────────────────────────────
+
 .footer__brand {
   font-family: $fh;
   font-weight: 900;
